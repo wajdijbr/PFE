@@ -1,0 +1,140 @@
+<!--<br>
+<div class="row justify-content-md-center">
+    <div class="col-md-4">
+    <div class="alert alert-danger" *ngIf="erreur==1">
+    <strong>login ou mot de passe erronés..</strong>
+    </div>
+    
+<div class="container mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <form>
+                <div class="form-group">
+                    <label>Nom Utilisateur :</label>
+                    <input type="text" name="username" class="form-control" [(ngModel)]="user.username">
+                </div>
+                <div class="form-group">
+                    <label>Mot de passe :</label>
+                    <input type="password" name="password" [(ngModel)]="user.password" class="form-control">
+                </div><br>
+                <div class="row justify-content-md-center">
+                    <button type="button" (click)="onLoggedin()" class="btn btn-primary" routerLink="/caisse">Connexion</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>-->
+<!-- Material form login -->
+
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #42A5F5;
+  color: rgb(255, 255, 255);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #adadad;
+}
+
+#div1 {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+}
+#div {
+  
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: auto;
+  width: 25%;
+  border: 3px solid rgb(191, 196, 209);
+  padding: 10px;
+  
+  
+}
+img {
+  width: 100%;
+  height: auto;
+  
+}
+body{
+    background-image: url("assets/images/back2.jpg");
+
+}
+#fondecran {
+ /* Fixe l'image en haut à gauche de la page */
+ position: fixed; 
+ top: 0; 
+ left: 0; 
+ /* Préserve le ratio de l'image */
+ min-width: 100%;
+ min-height: 100%;
+}
+
+</style>
+<body id="fondecran">
+  
+  
+
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+<div class="container center " id="div">
+    
+  
+  <form action="/action_page.php">
+   
+        <h3 align="center">
+            <img src="assets/images/logo.png"><br>
+            Connecter</h3>
+    
+<br>
+<div class="alert alert-danger" role="alert" *ngIf="erreur==1" >
+    Matricule ou mot de passe erronés..
+  </div> 
+    <label for="fname">Matricule</label>
+    <input type="text" id="fname" name="username" [(ngModel)]="user.username" placeholder="Matricul..">
+
+    <label for="lname">Mot de passe</label>
+    <input type="password" id="lname" name="password" [(ngModel)]="user.password" placeholder="mot de passe.." >
+
+   
+  
+    <input type="submit" value="Connexion" (click)="onLoggedin()" >
+  </form>
+</div>
+
+</body>

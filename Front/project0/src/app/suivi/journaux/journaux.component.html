@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #42A5F5;
+  color: rgb(255, 255, 255);
+}
+</style>
+</head>
+<body>
+<br>
+<div >    
+<p-table #dt2 [value]="journaux"  id="customers" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" 
+currentPageReportTemplate="De {first} à {last} Sur {totalRecords} lignes" [rowsPerPageOptions]="[10,25,50]" [globalFilterFields]="['codCaisse','libCaisse']"  *ngIf="authService.isAdmin()" >
+
+    <ng-template pTemplate="header">
+
+        <tr>
+            <th pSortableColumn="codCaisse"> <div class="p-d-flex p-jc-between p-ai-center">
+                Code Caisse 
+                <p-columnFilter type="text" field="codCaisse" display="menu"></p-columnFilter>
+                <p-sortIcon field="codCaisse"></p-sortIcon>
+            </div>
+            
+        </th>
+        <th pSortableColumn="libCaisse"> <div class="p-d-flex p-jc-between p-ai-center">
+            Libelle  
+            <p-columnFilter type="text" field="libCaisse" display="menu"></p-columnFilter>
+            <p-sortIcon field="libCaisse"></p-sortIcon>
+        </div>
+    </th>
+
+    <th pSortableColumn="dateJournee"> <div class="p-d-flex p-jc-between p-ai-center">
+        Date journée 
+        <p-columnFilter type="text" field="dateJournee" display="menu"></p-columnFilter>
+        <p-sortIcon field="dateJournee"></p-sortIcon>
+    </div></th>
+
+    <th pSortableColumn="etatJournee"> <div class="p-d-flex p-jc-between p-ai-center">
+        Etat journée 
+        <p-columnFilter type="text" field="etatJournee" display="menu"></p-columnFilter>
+        <p-sortIcon field="etatJournee"></p-sortIcon>
+    </div></th>
+
+    <th pSortableColumn="soldeDebut"> <div class="p-d-flex p-jc-between p-ai-center">
+        Solde debut 
+        <p-columnFilter type="text" field="soldeDebut" display="menu"></p-columnFilter>
+        <p-sortIcon field="soldeDebut"></p-sortIcon>
+    </div></th>
+
+    <th pSortableColumn="SoldeVeille"> <div class="p-d-flex p-jc-between p-ai-center">
+        Solde veille
+        <p-columnFilter type="text" field="SoldeVeille" display="menu"></p-columnFilter>
+        <p-sortIcon field="SoldeVeille"></p-sortIcon>
+    </div></th>
+
+    <th pSortableColumn="dateCloture"> <div class="p-d-flex p-jc-between p-ai-center">
+        Date cloture
+        <p-columnFilter type="text" field="dateCloture" display="menu"></p-columnFilter>
+        <p-sortIcon field="dateCloture"></p-sortIcon>
+    </div></th>
+
+    <th pSortableColumn="sejour"> <div class="p-d-flex p-jc-between p-ai-center">
+        Séjour
+        <p-columnFilter type="text" field="sejour" display="menu"></p-columnFilter>
+        <p-sortIcon field="sejour"></p-sortIcon>
+    </div></th>
+            
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-journaux>
+        <tr>
+            <td>{{journaux.codCaisse}}</td>
+            <td>{{journaux.libCaisse}}</td>
+            <td>{{journaux.dateJournee}}</td>
+            <td>{{journaux.etatJournee}}</td>
+            <td>{{journaux.soldeDebut}}</td>
+            <td>{{journaux.SoldeVeille}}</td>
+            <td>{{journaux.dateCloture}}</td>
+           <td>{{journaux.sejour}}</td>
+         
+        </tr>
+    </ng-template>
+</p-table>
+</div>  
+</body></html>

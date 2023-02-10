@@ -1,0 +1,40 @@
+
+<br>      
+<div class="card container" *ngIf="authService.isAdmin()">
+  <h5></h5>
+  <p-chart type="line" [data]="basicData"></p-chart>
+</div>
+
+<!---<p-table #dt1 [value]="caisses" [paginator]="true" [rows]="5" [showCurrentPageReport]="true" 
+currentPageReportTemplate="De {first} à {last} Sur {totalRecords} lignes" [rowsPerPageOptions]="[5,10,25,50]" [globalFilterFields]="['codCaisse','libCaisse']">
+
+    <ng-template pTemplate="header"> *ngIf="authService.isAdmin()" 
+
+        <tr>
+            <th pSortableColumn="codCaisse"> <div class="p-d-flex p-jc-between p-ai-center">
+                Code Caisse 
+                <p-columnFilter type="text" field="codCaisse" display="menu"></p-columnFilter>
+                <p-sortIcon field="codCaisse"></p-sortIcon>
+            </div>
+            
+        </th>
+        <th pSortableColumn="libCaisse"> <div class="p-d-flex p-jc-between p-ai-center">
+            Libelle  
+            <p-columnFilter type="text" field="libCaisse" display="menu"></p-columnFilter>
+            <p-sortIcon field="libCaisse"></p-sortIcon>
+        </div>
+    </th>
+
+    
+            
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-caisses>
+        <tr>
+            <td>{{caisses.codCaisse}}</td>
+            <td>{{caisses.libCaisse}}</td>
+            
+         
+        </tr>
+    </ng-template>
+</p-table>--->

@@ -1,0 +1,37 @@
+
+<style>
+  .nav-right{
+    display: flex;
+    gap: 30px;
+
+  }
+  .nav-right >div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  
+.p-menubar ul{
+  margin-left: 100px;
+}
+ #logo_fixe { position : fixed; left : 10px; top : 10px; }
+</style>
+<p-menubar [style]="{'padding-left': '50px','position':'fixed','z-index':'999','width':'100%','top':'0'}" [model]="items" *ngIf="authService.isAdmin()">
+  
+  <div  class="nav-right">
+    <img src="assets/images/logo1.jpg" height="40" id="logo_fixe" >  
+ 
+     <div>
+     Matricule({{authService.loggedUser}})
+     </div>
+      
+    <button  type="button" pButton   label="Deconnecter"  icon="pi pi-power-off" style="margin-left:.25em" (click)="authService.logout()"></button>
+  </div>
+</p-menubar> 
+
+
+
+
+    
